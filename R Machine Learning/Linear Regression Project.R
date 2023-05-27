@@ -85,7 +85,7 @@ sample <- sample.split(df$temp, SplitRatio = 0.70)
 # Training Data
 train = subset(df, sample == TRUE)
 model <- lm(count ~ temp,train)
-summary(model_tn)
+summary(model)
 
 # Testing Data
 test = subset(df, sample == FALSE)
