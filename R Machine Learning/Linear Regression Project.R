@@ -109,12 +109,3 @@ SST <- sum( (mean(df$count) - results$real)^2)
 R2 <- 1 - SSE/SST
 
 # we found model doesn't work well given our seasonal and time series data
-
-
-# multiple variable model
-# change the hour column to a column of numeric values
-df$hour <- sapply(df$hour,as.numeric)
-
-# count(season + holiday + workingday + weather + temp + humidity + windspeed + hour (factor))
-model_ncrda <- lm(count ~ . -casual - registered -datetime -atemp,df )
-summary(model_ncrda)
