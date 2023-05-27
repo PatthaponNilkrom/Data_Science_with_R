@@ -75,6 +75,9 @@ summary(temp.model)
 # test an temp 25 
 temp.test <- data.frame(temp=c(25))
 
+# change the hour column to a column of numeric values
+df$hour <- sapply(df$hour,as.numeric)
+
 # predict
 pa <- predict(temp.model,temp.test)
 
